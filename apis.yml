@@ -2,28 +2,49 @@ aid: thunes
 url: https://raw.githubusercontent.com/api-evangelist/thunes/refs/heads/main/apis.yml
 name: Thunes
 x-type: company
-description: >-
-  Thunes is a global cross-border payments network reaching 80+ countries via mobile wallets, bank accounts, cards, and cash. Powers send-money, accept-money, and direct-to-card flows.
+description: Thunes is a global cross-border payments network reaching 80+ countries via mobile wallets, bank accounts, cards,
+  and cash. Powers send-money, accept-money, and direct-to-card flows.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Fintech
-  - Cross-Border
-  - Payments
-  - FX
-  - Mobile Money
+- Fintech
+- Cross-Border
+- Payments
+- FX
+- Mobile Money
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+- name: Thunes Money Transfer API
+  description: Real-time cross-border money transfer to bank accounts, mobile wallets, cash pickup, and cards.
+  humanURL: https://docs.thunes.com/money-transfer/v2/
+  baseURL: https://api.thunes.com
+  tags:
+  - Money Transfer
+  - Payouts
+  - Cross-Border
+  properties:
+  - type: Documentation
+    url: https://docs.thunes.com/money-transfer/v2/
+- name: Thunes Collection API
+  description: Accept payments globally via local methods, mobile money and bank transfers.
+  humanURL: https://docs.thunes.com
+  baseURL: https://api.thunes.com
+  tags:
+  - Collections
+  - Payins
+  properties:
+  - type: Documentation
+    url: https://docs.thunes.com
 common:
-  - type: Website
-    url: https://www.thunes.com/
-  - type: Plans
-    url: plans/thunes-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/thunes-rate-limits.yml
-  - type: FinOps
-    url: finops/thunes-finops.yml
+- type: Website
+  url: https://www.thunes.com/
+- type: Plans
+  url: plans/thunes-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/thunes-rate-limits.yml
+- type: FinOps
+  url: finops/thunes-finops.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
