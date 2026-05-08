@@ -1,0 +1,29 @@
+aid: thunes
+url: https://raw.githubusercontent.com/api-evangelist/thunes/refs/heads/main/apis.yml
+name: Thunes
+x-type: company
+description: >-
+  Thunes is a global cross-border payments network reaching 80+ countries via mobile wallets, bank accounts, cards, and cash. Powers send-money, accept-money, and direct-to-card flows.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Fintech
+  - Cross-Border
+  - Payments
+  - FX
+  - Mobile Money
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://www.thunes.com/
+  - type: Plans
+    url: plans/thunes-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/thunes-rate-limits.yml
+  - type: FinOps
+    url: finops/thunes-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
