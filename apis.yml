@@ -1,7 +1,7 @@
 aid: thunes
 url: https://raw.githubusercontent.com/api-evangelist/thunes/refs/heads/main/apis.yml
 name: Thunes
-x-type: company
+kind: company
 description: Thunes is a global cross-border payments network reaching 80+ countries via mobile wallets, bank accounts, cards,
   and cash. Powers send-money, accept-money, and direct-to-card flows.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
