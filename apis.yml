@@ -47,6 +47,8 @@ common:
     url: rate-limits/thunes-rate-limits.yml
   - type: FinOps
     url: finops/thunes-finops.yml
+  - type: LLMsTxt
+    url: https://docs.thunes.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
