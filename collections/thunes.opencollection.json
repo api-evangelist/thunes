@@ -1,0 +1,665 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Thunes Money Transfer API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Connectivity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check API status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/ping"
+          },
+          "docs": "Check API status"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Discovery",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List available services",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/services"
+          },
+          "docs": "List available services"
+        },
+        {
+          "info": {
+            "name": "List available payers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/payers"
+          },
+          "docs": "List available payers"
+        },
+        {
+          "info": {
+            "name": "Get payer details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/payers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Payer identifier."
+              }
+            ]
+          },
+          "docs": "Get payer details"
+        },
+        {
+          "info": {
+            "name": "Retrieve payer rates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/payers/:id/rates",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Payer identifier."
+              }
+            ]
+          },
+          "docs": "Retrieve payer rates"
+        },
+        {
+          "info": {
+            "name": "List countries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/countries"
+          },
+          "docs": "List countries"
+        },
+        {
+          "info": {
+            "name": "BIC code lookup",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/lookups/BIC/:swift_bic_code",
+            "params": [
+              {
+                "name": "swift_bic_code",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "BIC code lookup"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Account Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve account balances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/balances"
+          },
+          "docs": "Retrieve account balances"
+        },
+        {
+          "info": {
+            "name": "Get balance movements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/balances/:balance_id/movements",
+            "params": [
+              {
+                "name": "balance_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get balance movements"
+        },
+        {
+          "info": {
+            "name": "Get topup instructions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/balances/:balance_id/topup_instructions",
+            "params": [
+              {
+                "name": "balance_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get topup instructions"
+        },
+        {
+          "info": {
+            "name": "List reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/reports"
+          },
+          "docs": "List reports"
+        },
+        {
+          "info": {
+            "name": "Get report details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/reports/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get report details"
+        },
+        {
+          "info": {
+            "name": "List report files",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/reports/:id/files",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List report files"
+        },
+        {
+          "info": {
+            "name": "Get a report file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/reports/:report_id/files/:id",
+            "params": [
+              {
+                "name": "report_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a report file"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Credit Parties",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get beneficiary credit-party information",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/payers/:id/:transaction_type/credit-party-information",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Payer identifier."
+              },
+              {
+                "name": "transaction_type",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get beneficiary credit-party information"
+        },
+        {
+          "info": {
+            "name": "Verify beneficiary account status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/payers/:id/:transaction_type/credit-party-verification",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Payer identifier."
+              },
+              {
+                "name": "transaction_type",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Verify beneficiary account status"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Quotations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a quotation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/quotations"
+          },
+          "docs": "Create a quotation"
+        },
+        {
+          "info": {
+            "name": "Retrieve quotation by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/quotations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve quotation by ID"
+        },
+        {
+          "info": {
+            "name": "Retrieve quotation by external ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/quotations/ext-:external_id",
+            "params": [
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve quotation by external ID"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create transaction from quotation ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/quotations/:id/transactions",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create transaction from quotation ID"
+        },
+        {
+          "info": {
+            "name": "Create transaction from external quotation ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/quotations/ext-:external_id/transactions",
+            "params": [
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create transaction from external quotation ID"
+        },
+        {
+          "info": {
+            "name": "Retrieve transaction by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve transaction by ID"
+        },
+        {
+          "info": {
+            "name": "Retrieve transaction by external ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/ext-:external_id",
+            "params": [
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve transaction by external ID"
+        },
+        {
+          "info": {
+            "name": "List attachments for a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/:id/attachments",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List attachments for a transaction"
+        },
+        {
+          "info": {
+            "name": "Add attachment to a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/:id/attachments",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Add attachment to a transaction"
+        },
+        {
+          "info": {
+            "name": "List attachments by external transaction ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/ext-:external_id/attachments",
+            "params": [
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List attachments by external transaction ID"
+        },
+        {
+          "info": {
+            "name": "Add attachment by external transaction ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/ext-:external_id/attachments",
+            "params": [
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Add attachment by external transaction ID"
+        },
+        {
+          "info": {
+            "name": "Confirm a transaction by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/:id/confirm",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Confirm a transaction by ID"
+        },
+        {
+          "info": {
+            "name": "Confirm a transaction by external ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/ext-:external_id/confirm",
+            "params": [
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Confirm a transaction by external ID"
+        },
+        {
+          "info": {
+            "name": "Cancel a transaction by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/:id/cancel",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a transaction by ID"
+        },
+        {
+          "info": {
+            "name": "Cancel a transaction by external ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/ext-:external_id/cancel",
+            "params": [
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a transaction by external ID"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Simulation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List possible status transitions (pre-production)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/simulation/transactions/:id/possible-transitions",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List possible status transitions (pre-production)"
+        },
+        {
+          "info": {
+            "name": "Simulate transaction status change by ID (pre-production)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/simulation/transactions/:id/:status_name",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "status_name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Simulate transaction status change by ID (pre-production)"
+        },
+        {
+          "info": {
+            "name": "Simulate transaction status change by external ID (pre-production)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/simulation/transactions/ext-:external_id/:status_name",
+            "params": [
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "status_name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Simulate transaction status change by external ID (pre-production)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
