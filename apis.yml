@@ -37,6 +37,10 @@ apis:
     - type: Documentation
       url: https://docs.thunes.com
 common:
+  - type: DomainSecurity
+    url: security/thunes-domain-security.yml
+  - type: Authentication
+    url: authentication/thunes-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/thunespayments
   - type: Website
