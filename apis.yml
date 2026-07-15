@@ -37,6 +37,8 @@ apis:
     - type: Documentation
       url: https://docs.thunes.com
 common:
+  - type: AgenticAccess
+    url: agentic-access/thunes-agentic-access.yml
   - type: DomainSecurity
     url: security/thunes-domain-security.yml
   - type: Authentication
