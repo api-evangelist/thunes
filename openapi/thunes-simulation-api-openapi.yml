@@ -1,0 +1,83 @@
+openapi: 3.1.0
+info:
+  title: Thunes Money Transfer Account Management Simulation API
+  description: 'Real-time cross-border money transfer to bank accounts, mobile wallets,
+
+    cash pickup, and cards via the Thunes global payouts network.
+
+    '
+  version: '2.0'
+  contact:
+    name: Thunes Developer Portal
+    url: https://docs.thunes.com/money-transfer/v2/
+servers:
+- url: https://api.thunes.com/v2/money-transfer
+  description: Production
+- url: https://api-pp.thunes.com/v2/money-transfer
+  description: Pre-production / Sandbox
+security:
+- basicAuth: []
+tags:
+- name: Simulation
+paths:
+  /simulation/transactions/{id}/possible-transitions:
+    get:
+      tags:
+      - Simulation
+      summary: List possible status transitions (pre-production)
+      operationId: listPossibleTransitions
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Possible transitions.
+  /simulation/transactions/{id}/{status_name}:
+    get:
+      tags:
+      - Simulation
+      summary: Simulate transaction status change by ID (pre-production)
+      operationId: simulateTransactionStatus
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: status_name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Status simulated.
+  /simulation/transactions/ext-{external_id}/{status_name}:
+    get:
+      tags:
+      - Simulation
+      summary: Simulate transaction status change by external ID (pre-production)
+      operationId: simulateTransactionStatusByExternalId
+      parameters:
+      - name: external_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: status_name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Status simulated.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using API key as user-ID and API secret as password.

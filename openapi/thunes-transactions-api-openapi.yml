@@ -1,0 +1,206 @@
+openapi: 3.1.0
+info:
+  title: Thunes Money Transfer Account Management Transactions API
+  description: 'Real-time cross-border money transfer to bank accounts, mobile wallets,
+
+    cash pickup, and cards via the Thunes global payouts network.
+
+    '
+  version: '2.0'
+  contact:
+    name: Thunes Developer Portal
+    url: https://docs.thunes.com/money-transfer/v2/
+servers:
+- url: https://api.thunes.com/v2/money-transfer
+  description: Production
+- url: https://api-pp.thunes.com/v2/money-transfer
+  description: Pre-production / Sandbox
+security:
+- basicAuth: []
+tags:
+- name: Transactions
+paths:
+  /quotations/{id}/transactions:
+    post:
+      tags:
+      - Transactions
+      summary: Create transaction from quotation ID
+      operationId: createTransactionFromQuotation
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Transaction created.
+  /quotations/ext-{external_id}/transactions:
+    post:
+      tags:
+      - Transactions
+      summary: Create transaction from external quotation ID
+      operationId: createTransactionFromExternalQuotation
+      parameters:
+      - name: external_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Transaction created.
+  /transactions/{id}:
+    get:
+      tags:
+      - Transactions
+      summary: Retrieve transaction by ID
+      operationId: getTransaction
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Transaction.
+  /transactions/ext-{external_id}:
+    get:
+      tags:
+      - Transactions
+      summary: Retrieve transaction by external ID
+      operationId: getTransactionByExternalId
+      parameters:
+      - name: external_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Transaction.
+  /transactions/{id}/attachments:
+    get:
+      tags:
+      - Transactions
+      summary: List attachments for a transaction
+      operationId: listTransactionAttachments
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Attachments.
+    post:
+      tags:
+      - Transactions
+      summary: Add attachment to a transaction
+      operationId: addTransactionAttachment
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Attachment added.
+  /transactions/ext-{external_id}/attachments:
+    get:
+      tags:
+      - Transactions
+      summary: List attachments by external transaction ID
+      operationId: listTransactionAttachmentsByExternalId
+      parameters:
+      - name: external_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Attachments.
+    post:
+      tags:
+      - Transactions
+      summary: Add attachment by external transaction ID
+      operationId: addTransactionAttachmentByExternalId
+      parameters:
+      - name: external_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Attachment added.
+  /transactions/{id}/confirm:
+    post:
+      tags:
+      - Transactions
+      summary: Confirm a transaction by ID
+      operationId: confirmTransaction
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Transaction confirmed.
+  /transactions/ext-{external_id}/confirm:
+    post:
+      tags:
+      - Transactions
+      summary: Confirm a transaction by external ID
+      operationId: confirmTransactionByExternalId
+      parameters:
+      - name: external_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Transaction confirmed.
+  /transactions/{id}/cancel:
+    post:
+      tags:
+      - Transactions
+      summary: Cancel a transaction by ID
+      operationId: cancelTransaction
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Transaction cancelled.
+  /transactions/ext-{external_id}/cancel:
+    post:
+      tags:
+      - Transactions
+      summary: Cancel a transaction by external ID
+      operationId: cancelTransactionByExternalId
+      parameters:
+      - name: external_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Transaction cancelled.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using API key as user-ID and API secret as password.

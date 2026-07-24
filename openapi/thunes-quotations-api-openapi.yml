@@ -1,0 +1,67 @@
+openapi: 3.1.0
+info:
+  title: Thunes Money Transfer Account Management Quotations API
+  description: 'Real-time cross-border money transfer to bank accounts, mobile wallets,
+
+    cash pickup, and cards via the Thunes global payouts network.
+
+    '
+  version: '2.0'
+  contact:
+    name: Thunes Developer Portal
+    url: https://docs.thunes.com/money-transfer/v2/
+servers:
+- url: https://api.thunes.com/v2/money-transfer
+  description: Production
+- url: https://api-pp.thunes.com/v2/money-transfer
+  description: Pre-production / Sandbox
+security:
+- basicAuth: []
+tags:
+- name: Quotations
+paths:
+  /quotations:
+    post:
+      tags:
+      - Quotations
+      summary: Create a quotation
+      operationId: createQuotation
+      responses:
+        '201':
+          description: Quotation created.
+  /quotations/{id}:
+    get:
+      tags:
+      - Quotations
+      summary: Retrieve quotation by ID
+      operationId: getQuotation
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Quotation.
+  /quotations/ext-{external_id}:
+    get:
+      tags:
+      - Quotations
+      summary: Retrieve quotation by external ID
+      operationId: getQuotationByExternalId
+      parameters:
+      - name: external_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Quotation.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using API key as user-ID and API secret as password.

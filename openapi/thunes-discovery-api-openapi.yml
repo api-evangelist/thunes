@@ -1,0 +1,100 @@
+openapi: 3.1.0
+info:
+  title: Thunes Money Transfer Account Management Discovery API
+  description: 'Real-time cross-border money transfer to bank accounts, mobile wallets,
+
+    cash pickup, and cards via the Thunes global payouts network.
+
+    '
+  version: '2.0'
+  contact:
+    name: Thunes Developer Portal
+    url: https://docs.thunes.com/money-transfer/v2/
+servers:
+- url: https://api.thunes.com/v2/money-transfer
+  description: Production
+- url: https://api-pp.thunes.com/v2/money-transfer
+  description: Pre-production / Sandbox
+security:
+- basicAuth: []
+tags:
+- name: Discovery
+paths:
+  /services:
+    get:
+      tags:
+      - Discovery
+      summary: List available services
+      operationId: listServices
+      responses:
+        '200':
+          description: List of services.
+  /payers:
+    get:
+      tags:
+      - Discovery
+      summary: List available payers
+      operationId: listPayers
+      responses:
+        '200':
+          description: List of payers.
+  /payers/{id}:
+    get:
+      tags:
+      - Discovery
+      summary: Get payer details
+      operationId: getPayer
+      parameters:
+      - $ref: '#/components/parameters/PayerId'
+      responses:
+        '200':
+          description: Payer details.
+  /payers/{id}/rates:
+    get:
+      tags:
+      - Discovery
+      summary: Retrieve payer rates
+      operationId: getPayerRates
+      parameters:
+      - $ref: '#/components/parameters/PayerId'
+      responses:
+        '200':
+          description: Payer rate table.
+  /countries:
+    get:
+      tags:
+      - Discovery
+      summary: List countries
+      operationId: listCountries
+      responses:
+        '200':
+          description: List of countries.
+  /lookups/BIC/{swift_bic_code}:
+    get:
+      tags:
+      - Discovery
+      summary: BIC code lookup
+      operationId: lookupBIC
+      parameters:
+      - name: swift_bic_code
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: BIC lookup result.
+components:
+  parameters:
+    PayerId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Payer identifier.
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using API key as user-ID and API secret as password.

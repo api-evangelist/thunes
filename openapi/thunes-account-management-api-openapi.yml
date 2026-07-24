@@ -1,0 +1,126 @@
+openapi: 3.1.0
+info:
+  title: Thunes Money Transfer Account Management API
+  description: 'Real-time cross-border money transfer to bank accounts, mobile wallets,
+
+    cash pickup, and cards via the Thunes global payouts network.
+
+    '
+  version: '2.0'
+  contact:
+    name: Thunes Developer Portal
+    url: https://docs.thunes.com/money-transfer/v2/
+servers:
+- url: https://api.thunes.com/v2/money-transfer
+  description: Production
+- url: https://api-pp.thunes.com/v2/money-transfer
+  description: Pre-production / Sandbox
+security:
+- basicAuth: []
+tags:
+- name: Account Management
+paths:
+  /balances:
+    get:
+      tags:
+      - Account Management
+      summary: Retrieve account balances
+      operationId: listBalances
+      responses:
+        '200':
+          description: List of balances.
+  /balances/{balance_id}/movements:
+    get:
+      tags:
+      - Account Management
+      summary: Get balance movements
+      operationId: getBalanceMovements
+      parameters:
+      - name: balance_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Movements for the balance.
+  /balances/{balance_id}/topup_instructions:
+    get:
+      tags:
+      - Account Management
+      summary: Get topup instructions
+      operationId: getTopupInstructions
+      parameters:
+      - name: balance_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Topup instructions.
+  /reports:
+    get:
+      tags:
+      - Account Management
+      summary: List reports
+      operationId: listReports
+      responses:
+        '200':
+          description: List of reports.
+  /reports/{id}:
+    get:
+      tags:
+      - Account Management
+      summary: Get report details
+      operationId: getReport
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Report details.
+  /reports/{id}/files:
+    get:
+      tags:
+      - Account Management
+      summary: List report files
+      operationId: listReportFiles
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Report files.
+  /reports/{report_id}/files/{id}:
+    get:
+      tags:
+      - Account Management
+      summary: Get a report file
+      operationId: getReportFile
+      parameters:
+      - name: report_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Report file content.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using API key as user-ID and API secret as password.
