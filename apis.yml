@@ -4,7 +4,20 @@ name: Thunes
 kind: company
 description: Thunes is a global cross-border payments network reaching 80+ countries via mobile wallets, bank accounts, cards,
   and cash. Powers send-money, accept-money, and direct-to-card flows.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/thunes.png
 tags:
   - Fintech
   - Cross-Border
@@ -15,27 +28,98 @@ created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
 apis:
-  - name: Thunes Money Transfer API
-    description: Real-time cross-border money transfer to bank accounts, mobile wallets, cash pickup, and cards.
-    humanURL: https://docs.thunes.com/money-transfer/v2/
-    baseURL: https://api.thunes.com
-    tags:
-    - Money Transfer
-    - Payouts
-    - Cross-Border
-    properties:
-    - type: Documentation
-      url: https://docs.thunes.com/money-transfer/v2/
-  - name: Thunes Collection API
-    description: Accept payments globally via local methods, mobile money and bank transfers.
-    humanURL: https://docs.thunes.com
-    baseURL: https://api.thunes.com
-    tags:
-    - Collections
-    - Payins
-    properties:
-    - type: Documentation
-      url: https://docs.thunes.com
+- name: Thunes Money Transfer API
+  description: >-
+    Real-time cross-border money transfer to bank accounts, mobile wallets, cash pickup, and cards.
+  humanURL: https://docs.thunes.com/money-transfer/v2/
+  baseURL: https://api.thunes.com
+  tags:
+  - Money Transfer
+  - Payouts
+  - Cross-Border
+  properties:
+  - type: Documentation
+    url: https://docs.thunes.com/money-transfer/v2/
+- name: Thunes Collection API
+  description: Accept payments globally via local methods, mobile money and bank transfers.
+  humanURL: https://docs.thunes.com
+  baseURL: https://api.thunes.com
+  tags:
+  - Collections
+  - Payins
+  properties:
+  - type: Documentation
+    url: https://docs.thunes.com
+- aid: thunes:thunes-account-management-api
+  name: Thunes Account Management API
+  description: The Account Management API from Thunes — 7 operation(s) for account management.
+  humanURL: https://docs.thunes.com/money-transfer/v2/
+  baseURL: https://api.thunes.com
+  tags:
+  - Account Management
+  properties:
+  - type: OpenAPI
+    url: openapi/thunes-account-management-api-openapi.yml
+- aid: thunes:thunes-connectivity-api
+  name: Thunes Connectivity API
+  description: The Connectivity API from Thunes — 1 operation(s) for connectivity.
+  humanURL: https://docs.thunes.com/money-transfer/v2/
+  baseURL: https://api.thunes.com
+  tags:
+  - Connectivity
+  properties:
+  - type: OpenAPI
+    url: openapi/thunes-connectivity-api-openapi.yml
+- aid: thunes:thunes-credit-parties-api
+  name: Thunes Credit Parties API
+  description: The Credit Parties API from Thunes — 2 operation(s) for credit parties.
+  humanURL: https://docs.thunes.com/money-transfer/v2/
+  baseURL: https://api.thunes.com
+  tags:
+  - Credit Parties
+  properties:
+  - type: OpenAPI
+    url: openapi/thunes-credit-parties-api-openapi.yml
+- aid: thunes:thunes-discovery-api
+  name: Thunes Discovery API
+  description: The Discovery API from Thunes — 6 operation(s) for discovery.
+  humanURL: https://docs.thunes.com/money-transfer/v2/
+  baseURL: https://api.thunes.com
+  tags:
+  - Discovery
+  properties:
+  - type: OpenAPI
+    url: openapi/thunes-discovery-api-openapi.yml
+- aid: thunes:thunes-quotations-api
+  name: Thunes Quotations API
+  description: The Quotations API from Thunes — 3 operation(s) for quotations.
+  humanURL: https://docs.thunes.com/money-transfer/v2/
+  baseURL: https://api.thunes.com
+  tags:
+  - Quotations
+  properties:
+  - type: OpenAPI
+    url: openapi/thunes-quotations-api-openapi.yml
+- aid: thunes:thunes-simulation-api
+  name: Thunes Simulation API
+  description: The Simulation API from Thunes — 3 operation(s) for simulation.
+  humanURL: https://docs.thunes.com/money-transfer/v2/
+  baseURL: https://api.thunes.com
+  tags:
+  - Simulation
+  properties:
+  - type: OpenAPI
+    url: openapi/thunes-simulation-api-openapi.yml
+- aid: thunes:thunes-transactions-api
+  name: Thunes Transactions API
+  description: The Transactions API from Thunes — 10 operation(s) for transactions.
+  humanURL: https://docs.thunes.com/money-transfer/v2/
+  baseURL: https://api.thunes.com
+  tags:
+  - Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/thunes-transactions-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/thunes-agentic-access.yml
