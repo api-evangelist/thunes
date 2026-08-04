@@ -1,0 +1,26 @@
+{
+  "provider": "thunes",
+  "sources": [
+    "thunes-account-management-api-openapi.yml",
+    "thunes-connectivity-api-openapi.yml",
+    "thunes-credit-parties-api-openapi.yml",
+    "thunes-discovery-api-openapi.yml",
+    "thunes-quotations-api-openapi.yml",
+    "thunes-simulation-api-openapi.yml",
+    "thunes-transactions-api-openapi.yml"
+  ],
+  "outputs": [
+    "thunes-account-management-api-openapi.yml",
+    "thunes-connectivity-api-openapi.yml",
+    "thunes-credit-parties-api-openapi.yml",
+    "thunes-discovery-api-openapi.yml",
+    "thunes-quotations-api-openapi.yml",
+    "thunes-simulation-api-openapi.yml",
+    "thunes-transactions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
