@@ -1,0 +1,73 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Thunes Money Transfer Account Management Credit Parties API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Credit Parties",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get beneficiary credit-party information",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/payers/:id/:transaction_type/credit-party-information",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Payer identifier."
+              },
+              {
+                "name": "transaction_type",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get beneficiary credit-party information"
+        },
+        {
+          "info": {
+            "name": "Verify beneficiary account status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/payers/:id/:transaction_type/credit-party-verification",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Payer identifier."
+              },
+              {
+                "name": "transaction_type",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Verify beneficiary account status"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

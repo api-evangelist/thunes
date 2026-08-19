@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Thunes Money Transfer Account Management Connectivity API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Connectivity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check API status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/ping"
+          },
+          "docs": "Check API status"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

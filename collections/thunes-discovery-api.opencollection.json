@@ -1,0 +1,114 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Thunes Money Transfer Account Management Discovery API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Discovery",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List available services",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/services"
+          },
+          "docs": "List available services"
+        },
+        {
+          "info": {
+            "name": "List available payers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/payers"
+          },
+          "docs": "List available payers"
+        },
+        {
+          "info": {
+            "name": "Get payer details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/payers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Payer identifier."
+              }
+            ]
+          },
+          "docs": "Get payer details"
+        },
+        {
+          "info": {
+            "name": "Retrieve payer rates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/payers/:id/rates",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Payer identifier."
+              }
+            ]
+          },
+          "docs": "Retrieve payer rates"
+        },
+        {
+          "info": {
+            "name": "List countries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/countries"
+          },
+          "docs": "List countries"
+        },
+        {
+          "info": {
+            "name": "BIC code lookup",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/lookups/BIC/:swift_bic_code",
+            "params": [
+              {
+                "name": "swift_bic_code",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "BIC code lookup"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

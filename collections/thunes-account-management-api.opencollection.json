@@ -1,0 +1,142 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Thunes Money Transfer Account Management API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Account Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve account balances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/balances"
+          },
+          "docs": "Retrieve account balances"
+        },
+        {
+          "info": {
+            "name": "Get balance movements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/balances/:balance_id/movements",
+            "params": [
+              {
+                "name": "balance_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get balance movements"
+        },
+        {
+          "info": {
+            "name": "Get topup instructions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/balances/:balance_id/topup_instructions",
+            "params": [
+              {
+                "name": "balance_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get topup instructions"
+        },
+        {
+          "info": {
+            "name": "List reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/reports"
+          },
+          "docs": "List reports"
+        },
+        {
+          "info": {
+            "name": "Get report details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/reports/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get report details"
+        },
+        {
+          "info": {
+            "name": "List report files",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/reports/:id/files",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List report files"
+        },
+        {
+          "info": {
+            "name": "Get a report file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/reports/:report_id/files/:id",
+            "params": [
+              {
+                "name": "report_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a report file"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

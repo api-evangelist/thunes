@@ -1,0 +1,241 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Thunes Money Transfer Account Management Transactions API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create transaction from quotation ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/quotations/:id/transactions",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create transaction from quotation ID"
+        },
+        {
+          "info": {
+            "name": "Create transaction from external quotation ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/quotations/ext-:external_id/transactions",
+            "params": [
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create transaction from external quotation ID"
+        },
+        {
+          "info": {
+            "name": "Retrieve transaction by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve transaction by ID"
+        },
+        {
+          "info": {
+            "name": "Retrieve transaction by external ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/ext-:external_id",
+            "params": [
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve transaction by external ID"
+        },
+        {
+          "info": {
+            "name": "List attachments for a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/:id/attachments",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List attachments for a transaction"
+        },
+        {
+          "info": {
+            "name": "Add attachment to a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/:id/attachments",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Add attachment to a transaction"
+        },
+        {
+          "info": {
+            "name": "List attachments by external transaction ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/ext-:external_id/attachments",
+            "params": [
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List attachments by external transaction ID"
+        },
+        {
+          "info": {
+            "name": "Add attachment by external transaction ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/ext-:external_id/attachments",
+            "params": [
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Add attachment by external transaction ID"
+        },
+        {
+          "info": {
+            "name": "Confirm a transaction by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/:id/confirm",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Confirm a transaction by ID"
+        },
+        {
+          "info": {
+            "name": "Confirm a transaction by external ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/ext-:external_id/confirm",
+            "params": [
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Confirm a transaction by external ID"
+        },
+        {
+          "info": {
+            "name": "Cancel a transaction by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/:id/cancel",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a transaction by ID"
+        },
+        {
+          "info": {
+            "name": "Cancel a transaction by external ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/transactions/ext-:external_id/cancel",
+            "params": [
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a transaction by external ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

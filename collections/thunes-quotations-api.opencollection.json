@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Thunes Money Transfer Account Management Quotations API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Quotations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a quotation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.thunes.com/v2/money-transfer/quotations"
+          },
+          "docs": "Create a quotation"
+        },
+        {
+          "info": {
+            "name": "Retrieve quotation by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/quotations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve quotation by ID"
+        },
+        {
+          "info": {
+            "name": "Retrieve quotation by external ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thunes.com/v2/money-transfer/quotations/ext-:external_id",
+            "params": [
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve quotation by external ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
