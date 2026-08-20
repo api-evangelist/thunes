@@ -45,6 +45,9 @@ apis:
   humanURL: https://docs.thunes.com
   baseURL: https://api.thunes.com
   tags:
+  - Collection
+  - Payins
+  tags_raw:
   - Collections
   - Payins
   properties:
@@ -116,6 +119,8 @@ apis:
   humanURL: https://docs.thunes.com/money-transfer/v2/
   baseURL: https://api.thunes.com
   tags:
+  - Transaction
+  tags_raw:
   - Transactions
   properties:
   - type: OpenAPI
