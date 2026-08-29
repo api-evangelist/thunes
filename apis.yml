@@ -4,6 +4,18 @@ name: Thunes
 kind: company
 description: Thunes is a global cross-border payments network reaching 80+ countries via mobile wallets, bank accounts, cards,
   and cash. Powers send-money, accept-money, and direct-to-card flows.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
