@@ -59,7 +59,7 @@ apis:
   baseURL: https://api.thunes.com
   tags:
   - Collection
-  - Payins
+  - Pay-In
   tags_raw:
   - Collections
   - Payins
