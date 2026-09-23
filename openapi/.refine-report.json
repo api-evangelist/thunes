@@ -1,13 +1,7 @@
 {
   "provider": "thunes",
   "sources": [
-    "thunes-account-management-api-openapi.yml",
-    "thunes-connectivity-api-openapi.yml",
-    "thunes-credit-parties-api-openapi.yml",
-    "thunes-discovery-api-openapi.yml",
-    "thunes-quotations-api-openapi.yml",
-    "thunes-simulation-api-openapi.yml",
-    "thunes-transactions-api-openapi.yml"
+    "_original/thunes-openapi.yml"
   ],
   "outputs": [
     "thunes-account-management-api-openapi.yml",
@@ -21,6 +15,18 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "thunes-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "thunes-account-management-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "thunes-connectivity-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "thunes-credit-parties-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "thunes-discovery-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "thunes-quotations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "thunes-simulation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "thunes-transactions-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
